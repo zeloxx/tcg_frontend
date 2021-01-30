@@ -1,12 +1,9 @@
 import React from 'react';
-import './home.css';
+import { Navigation } from '../../components/Navigation';
+// import './home.css';
 
 export const Home = () => {
-    return (
-        <div className='custom-styles'>
-            <button className='px-5 py-2'>Play Now</button>
-        </div>
-    );
+    return <div className='custom-styles'></div>;
 };
 
 // background: #f8ff45;
