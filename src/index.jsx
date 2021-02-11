@@ -7,6 +7,8 @@ import { CardLibrary } from './pages/card-library/CardLibrary';
 import { DeckBuilder } from './pages/deck-builder/DeckBuilder';
 import { Decks } from './pages/decks/Decks';
 import { Home } from './pages/home/Home';
+import { Play } from './pages/play/Play';
+import { Quickplay } from './pages/quickplay/Quickplay';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
@@ -17,8 +19,18 @@ ReactDOM.render(
                     <Route exact path='/' component={Home} />
                     <Route exact path='/card-library' component={CardLibrary} />
                     <Route exact path='/decks' component={Decks} />
-                    <Route exact path='/deck-builder/create' component={DeckBuilder} />
-                    <Route exact path='/deck-builder/:id' component={DeckBuilder} />
+                    <Route
+                        exact
+                        path='/deck-builder/create'
+                        component={DeckBuilder}
+                    />
+                    <Route
+                        exact
+                        path='/deck-builder/:id'
+                        component={DeckBuilder}
+                    />
+                    <Route exact path='/play' component={Play} />
+                    <Route exact path='/quickplay/:id' component={Quickplay} />
                 </Switch>
             </GlobalPage>
         </BrowserRouter>

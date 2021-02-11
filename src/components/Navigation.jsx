@@ -9,25 +9,40 @@ export const Navigation = () => {
             <div className='flex justify-between items-center'>
                 <div>
                     <ul className='flex'>
-                        <li className='p-3'>
+                        {/* <li className='p-3'>
                             <Link to={'/card-library'}> Card Library</Link>
-                        </li>
+                        </li> */}
                         <li className='p-3'>
-                            <Link to={'/deck-builder'}> Deck Builder</Link>
+                            <Link to={'/decks'}> Deck Builder</Link>
                         </li>
-                        <li className='ml-2 p-3'>
+                        {/* <li className='ml-2 p-3'>
                             <Link to={'/boosters'}>Buy Booster Packs</Link>
                         </li>
                         <li className='ml-2 p-3'>
                             <Link to={'/auction'}>Player Auction House</Link>
+                        </li> */}
+                        <li className='ml-2 p-3'>
+                            <Link to={'/play'}>Play</Link>
                         </li>
                     </ul>
                 </div>
                 <div className='mr-3 flex'>
-                    <div className='text-gold' onClick={() => (window.location.href = 'http://localhost:5000/auth/google')}>
+                    <div
+                        className='text-gold'
+                        onClick={() =>
+                            (window.location.href =
+                                'http://localhost:5000/auth/google')
+                        }
+                    >
                         Sign In With Google
                     </div>
-                    <div onClick={() => (window.location.href = 'http://localhost:5000/auth/logout')} className='ml-3'>
+                    <div
+                        onClick={() =>
+                            (window.location.href =
+                                'http://localhost:5000/auth/logout')
+                        }
+                        className='ml-3'
+                    >
                         Sign Out
                     </div>
                 </div>

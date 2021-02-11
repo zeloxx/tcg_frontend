@@ -10,7 +10,7 @@ export const Decks = () => {
 
     useEffect(() => {
         doCall('http://localhost:5000/decks').then((res) => {
-            setDecks([res.data.data[0], res.data.data[0]]);
+            setDecks(res.data.data);
             setIsLoaded(true);
         });
         return () => {};
@@ -62,7 +62,10 @@ export const Decks = () => {
                             <div className='bg-medium-blue rounded p-5 inline-block'>
                                 <div className='flex flex-col items-center'>
                                     <div>
-                                        <h1 className='text-3xl'>You do not have any decks created yet.</h1>
+                                        <h1 className='text-3xl'>
+                                            You do not have any decks created
+                                            yet.
+                                        </h1>
                                     </div>
                                     <div className='mt-5'>
                                         <Link to='deck-builder/create'>
@@ -78,7 +81,9 @@ export const Decks = () => {
                                 <div className='ml-3 w-1/4'>
                                     <div className='w-full bg-medium-blue rounded p-5 inline-block'>
                                         <div className='flex flex-col items-center'>
-                                            <div className='text-xl text-center'>Create a new deck from scratch</div>
+                                            <div className='text-xl text-center'>
+                                                Create a new deck from scratch
+                                            </div>
                                             <div className='mt-5'>
                                                 <Link to='deck-builder/create'>
                                                     <Button>Create Deck</Button>
@@ -87,16 +92,26 @@ export const Decks = () => {
                                         </div>
                                     </div>
                                 </div>
+                                {console.log(decks)}
                                 {decks.map((deck) => (
                                     <div className='ml-3 w-1/4'>
                                         <div className='w-full bg-medium-blue rounded p-5 inline-block h-full'>
                                             <div className='flex flex-col items-center justify-between h-full'>
-                                                <div className='text-xl' key={deck._id}>
+                                                <div
+                                                    className='text-xl'
+                                                    key={deck._id}
+                                                >
                                                     {deck.name}
                                                 </div>
                                                 <div className='mt-5 text-gold'>
-                                                    <Link to={`deck-builder/${deck._id}`}>
-                                                        <Button type={'secondary'}>Edit Deck</Button>
+                                                    <Link
+                                                        to={`deck-builder/${deck._id}`}
+                                                    >
+                                                        <Button
+                                                            type={'secondary'}
+                                                        >
+                                                            Edit Deck
+                                                        </Button>
                                                     </Link>
                                                 </div>
                                             </div>
